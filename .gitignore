@@ -1,0 +1,7 @@
+*.txt
+!CMakeLists.txt
+build/
+data/
+img/
+model/
+.vscode/
