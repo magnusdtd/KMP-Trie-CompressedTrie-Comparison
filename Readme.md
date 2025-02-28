@@ -23,9 +23,9 @@ cd trie-comparison
 The project uses matplotlib C++ for visualizing the performance metrics.
 
 ### Trie vs KMP
-![KMP Performance](final-result\Trie_KMP_elapsedtime_15.png)
+![KMP Performance](final-result/Trie_KMP_elapsedtime_15.png)
 ### Trie vs Compressed Trie
-![KMP Performance](final-result\Trie_CompressedTrie_elapsedtime_15.png)
+![KMP Performance](final-result/Trie_CompressedTrie_elapsedtime_15.png)
 
 
 ## Contributing
