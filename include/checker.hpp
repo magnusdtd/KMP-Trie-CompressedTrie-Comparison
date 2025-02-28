@@ -7,6 +7,8 @@
 #include <vector>
 #include "./statistic.hpp"
 
+#define NO_LIMIT -1
+
 // Function to measure execution time
 template <typename Func, typename... Args>
 void measureExecutionTime(Func&& func, double& elapsedTime, Args&&... args) {
@@ -33,8 +35,8 @@ void measurePerformance(const std::vector<std::string>& queries, const std::stri
     T *instance;
     instance = new T;
     instance->readDataFromFile(inputFile);
-    instance->setLimitWord(limitWord);
-    instance->getLimitWord();
+    if (limitWord != NO_LIMIT)
+        instance->setLimitWord(limitWord);
 
     std::ofstream ofs(outputFile, std::ofstream::out | std::ofstream::trunc);
     ofs.close();

@@ -35,4 +35,25 @@ double calculateMedian(std::vector<T> data) {
     }
 }
 
+// Function to calculate p-value for one-tailed t-test comparing if mean of sample1 is greater than mean of sample2
+template <typename T>
+double calculatePValue(const std::vector<T>& sample1, const std::vector<T>& sample2) {
+    if (sample1.size() < 2 || sample2.size() < 2) {
+        throw std::invalid_argument("Samples must have at least two values each.");
+    }
+
+    double mean1 = calculateMean(sample1);
+    double mean2 = calculateMean(sample2);
+    double stdDev1 = calculateStdDev(sample1, mean1);
+    double stdDev2 = calculateStdDev(sample2, mean2);
+
+    double pooledStdDev = std::sqrt(((stdDev1 * stdDev1) / sample1.size()) + ((stdDev2 * stdDev2) / sample2.size()));
+    double tStatistic = (mean1 - mean2) / pooledStdDev;
+
+    // Calculate p-value using the cumulative distribution function (CDF) of the t-distribution
+    long double pValue = 1 - std::erf(std::abs(tStatistic) / std::sqrt(2));
+
+    return pValue;
+}
+
 #endif

@@ -33,4 +33,15 @@ std::vector<std::string> readResultsFromFile(const std::string& filename) {
     return results;
 }
 
+void writeQueriesToFile(const std::vector<std::string>& queries, const std::string& filePath) {
+    std::ofstream outFile(filePath);
+    if (!outFile.is_open()) {
+        std::cerr << "Failed to open file for writing: " << filePath << "\n";
+    }
+    for (const auto& query : queries) {
+        outFile << query << "\n";
+    }
+    outFile.close();
+}
+
 #endif

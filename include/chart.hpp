@@ -119,11 +119,16 @@ void compare_Trie_KMP(const int& dataSize, std::vector<int> limitWords) {
             std::string query;
             do {
                 query = words[distribution(generator)];
+                std::uniform_int_distribution<int> index_distribution(1, query.size());
+                query = query.substr(0, index_distribution(generator));
             } while (std::count_if(words.begin(), words.end(), [&query](const std::string& word) {
                 return word.find(query) == 0;
-            }) < *std::max_element(limitWords.begin(), limitWords.end()));
+            }) < limitWord);
             queries.emplace_back(query);
         }
+
+        // Write queries to file
+        writeQueriesToFile(queries, "../result/queries_Trie_KMP_" + std::to_string(limitWord) + ".txt");
 
         // Measure performance for Trie
         measurePerformance<Trie>(queries, DATA_FILE_PATH, "../result/Trie_result_" + std::to_string(limitWord) + ".txt", timesTrie, comparisonCountsTrie, limitWord);
@@ -137,6 +142,14 @@ void compare_Trie_KMP(const int& dataSize, std::vector<int> limitWords) {
         std::vector<std::vector<long long>> allComparisonCountsTrieKMP = {comparisonCountsTrie, comparisonCountsKMP};
         draw_elapsed_time_chart(dataSize, limitWord, algorithmsTrieKMP, allTimesTrieKMP, "./../img/Trie_KMP_elapsedtime_" + std::to_string(limitWord) + ".png");
         draw_comparison_counts_chart(dataSize, limitWord, algorithmsTrieKMP, allComparisonCountsTrieKMP, "./../img/Trie_KMP_comparison_counts_" + std::to_string(limitWord) + ".png");
+
+        // Calculate p-value for elapsed time
+        double pValueTime = calculatePValue(timesKMP, timesTrie);
+        std::cout << "P-Value for elapsed time (KMP vs Trie) with limitWord " << limitWord << ": " << pValueTime << "\n";
+
+        // Calculate p-value for comparison counts
+        double pValueComparisonCounts = calculatePValue(comparisonCountsKMP, comparisonCountsTrie);
+        std::cout << "P-Value for comparison counts (KMP vs Trie) with limitWord " << limitWord << ": " << pValueComparisonCounts << "\n";
     }
 }
 
@@ -166,17 +179,22 @@ void compare_Trie_CompressedTrie(const int& dataSize, std::vector<int> limitWord
         std::uniform_int_distribution<int> distribution(0, words.size() - 1);
 
 
-        std::unordered_set<int> selectedIndices;
+        // Ensure that the generated queries result in the algorithm 
+        // returning a number of results greater than or equal to the limitWord
         for (int i = 0; i < dataSize; ++i) {
             std::string query;
-            int index;
             do {
-                index = distribution(generator);
-            } while (selectedIndices.find(index) != selectedIndices.end());
-            selectedIndices.insert(index);
-            query = words[index];
+                query = words[distribution(generator)];
+                std::uniform_int_distribution<int> index_distribution(1, query.size());
+                query = query.substr(0, index_distribution(generator));
+            } while (std::count_if(words.begin(), words.end(), [&query](const std::string& word) {
+                return word.find(query) == 0;
+            }) < limitWord);
             queries.emplace_back(query);
         }
+        
+        // Write queries to file
+        writeQueriesToFile(queries, "../result/queries_Trie_Compressed_Trie_" + std::to_string(limitWord) + ".txt");
 
         // Measure performance for Trie
         measurePerformance<Trie>(queries, DATA_FILE_PATH, "../result/Trie_result_" + std::to_string(limitWord) + ".txt", timesTrie, comparisonCountsTrie, limitWord);
@@ -190,6 +208,14 @@ void compare_Trie_CompressedTrie(const int& dataSize, std::vector<int> limitWord
         std::vector<std::vector<long long>> allComparisonCountsTrieCompressedTrie = {comparisonCountsTrie, comparisonCountsCompressedTrie};
         draw_elapsed_time_chart(dataSize, limitWord, algorithmsTrieCompressedTrie, allTimesTrieCompressedTrie, "./../img/Trie_CompressedTrie_elapsedtime_" + std::to_string(limitWord) + ".png");
         draw_comparison_counts_chart(dataSize, limitWord, algorithmsTrieCompressedTrie, allComparisonCountsTrieCompressedTrie, "./../img/Trie_CompressedTrie_comparison_counts_" + std::to_string(limitWord) + ".png");
+
+        // Calculate p-value for elapsed time
+        double pValueTime = calculatePValue(timesTrie, timesCompressedTrie);
+        std::cout << "P-Value for elapsed time (Trie vs Trie Compressed Trie) with limitWord " << limitWord << ": " << pValueTime << "\n";
+
+        // Calculate p-value for comparison counts
+        double pValueComparisonCounts = calculatePValue(comparisonCountsTrie, comparisonCountsCompressedTrie);
+        std::cout << "P-Value for comparison counts (Trie vs Trie Compressed Trie) with limitWord " << limitWord << ": " << pValueComparisonCounts << "\n";
     }
 }
 
