@@ -1,10 +1,6 @@
 build/
-data/
-img/
-model/
 .vscode/
 
-*.txt
 *.png
 *.jpg
 *.jpeg
@@ -12,6 +8,8 @@ model/
 *.bmp
 *.tiff
 
-!CMakeLists.txt
+!final-result/
 !img/
 !data/
+result/*
+!CMakeLists.txt
