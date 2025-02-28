@@ -1,0 +1,62 @@
+Algorithm: 4Trie
+Mean Time: 0.011482 seconds
+Standard Deviation of Time: 0.028239 seconds
+Mean Comparisons: 54777.720000
+Standard Deviation of Comparisons: 137960.904103
+===========================================================
+Algorithm: 14CompressedTrie
+Mean Time: 0.006576 seconds
+Standard Deviation of Time: 0.017964 seconds
+Mean Comparisons: 26938.858000
+Standard Deviation of Comparisons: 67528.043327
+===========================================================
+P-Value for elapsed time (Trie vs Trie Compressed Trie) with limitWord 1: 0.000004
+P-Value for comparison counts (Trie vs Trie Compressed Trie) with limitWord 1: 0.000000
+
+
+Algorithm: 4Trie
+Mean Time: 0.007680 seconds
+Standard Deviation of Time: 0.015068 seconds
+Mean Comparisons: 93984.611000
+Standard Deviation of Comparisons: 177162.936465
+===========================================================
+Algorithm: 14CompressedTrie
+Mean Time: 0.005698 seconds
+Standard Deviation of Time: 0.010633 seconds
+Mean Comparisons: 46307.160000
+Standard Deviation of Comparisons: 86954.698538
+===========================================================
+P-Value for elapsed time (Trie vs Trie Compressed Trie) with limitWord 5: 0.000678
+P-Value for comparison counts (Trie vs Trie Compressed Trie) with limitWord 5: 0.000000
+
+
+Algorithm: 4Trie
+Mean Time: 0.008311 seconds
+Standard Deviation of Time: 0.014869 seconds
+Mean Comparisons: 102503.967000
+Standard Deviation of Comparisons: 175528.423432
+===========================================================
+Algorithm: 14CompressedTrie
+Mean Time: 0.006893 seconds
+Standard Deviation of Time: 0.012756 seconds
+Mean Comparisons: 50630.261000
+Standard Deviation of Comparisons: 86194.866898
+===========================================================
+P-Value for elapsed time (Trie vs Trie Compressed Trie) with limitWord 10: 0.022102
+P-Value for comparison counts (Trie vs Trie Compressed Trie) with limitWord 10: 0.000000
+
+
+Algorithm: 4Trie
+Mean Time: 0.018775 seconds
+Standard Deviation of Time: 0.034662 seconds
+Mean Comparisons: 111946.162000
+Standard Deviation of Comparisons: 188296.660699
+===========================================================
+Algorithm: 14CompressedTrie
+Mean Time: 0.015725 seconds
+Standard Deviation of Time: 0.033364 seconds
+Mean Comparisons: 55260.753000
+Standard Deviation of Comparisons: 92448.001906
+===========================================================
+P-Value for elapsed time (Trie vs Trie Compressed Trie) with limitWord 15: 0.044988
+P-Value for comparison counts (Trie vs Trie Compressed Trie) with limitWord 15: 0.000000

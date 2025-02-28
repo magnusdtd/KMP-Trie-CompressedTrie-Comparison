@@ -1,0 +1,62 @@
+Algorithm: 4Trie
+Mean Time: 0.004943 seconds
+Standard Deviation of Time: 0.013499 seconds
+Mean Comparisons: 61284.072000
+Standard Deviation of Comparisons: 145424.889499
+===========================================================
+Algorithm: 3KMP
+Mean Time: 0.033148 seconds
+Standard Deviation of Time: 0.052371 seconds
+Mean Comparisons: 5347182.210000
+Standard Deviation of Comparisons: 8471816.996193
+===========================================================
+P-Value for elapsed time (KMP vs Trie) with limitWord 1: 0.000000
+P-Value for comparison counts (KMP vs Trie) with limitWord 1: 0.000000
+
+
+Algorithm: 4Trie
+Mean Time: 0.007687 seconds
+Standard Deviation of Time: 0.015427 seconds
+Mean Comparisons: 88015.692000
+Standard Deviation of Comparisons: 167884.684417
+===========================================================
+Algorithm: 3KMP
+Mean Time: 0.021994 seconds
+Standard Deviation of Time: 0.042032 seconds
+Mean Comparisons: 3221260.087000
+Standard Deviation of Comparisons: 5947258.348818
+===========================================================
+P-Value for elapsed time (KMP vs Trie) with limitWord 5: 0.000000
+P-Value for comparison counts (KMP vs Trie) with limitWord 5: 0.000000
+
+
+Algorithm: 4Trie
+Mean Time: 0.011143 seconds
+Standard Deviation of Time: 0.019752 seconds
+Mean Comparisons: 110413.677000
+Standard Deviation of Comparisons: 191341.130799
+===========================================================
+Algorithm: 3KMP
+Mean Time: 0.017567 seconds
+Standard Deviation of Time: 0.033236 seconds
+Mean Comparisons: 2899514.107000
+Standard Deviation of Comparisons: 5640976.512879
+===========================================================
+P-Value for elapsed time (KMP vs Trie) with limitWord 10: 0.000000
+P-Value for comparison counts (KMP vs Trie) with limitWord 10: 0.000000
+
+
+Algorithm: 4Trie
+Mean Time: 0.012042 seconds
+Standard Deviation of Time: 0.020505 seconds
+Mean Comparisons: 111874.040000
+Standard Deviation of Comparisons: 185727.044032
+===========================================================
+Algorithm: 3KMP
+Mean Time: 0.016265 seconds
+Standard Deviation of Time: 0.031700 seconds
+Mean Comparisons: 2593552.316000
+Standard Deviation of Comparisons: 4992911.048653
+===========================================================
+P-Value for elapsed time (KMP vs Trie) with limitWord 15: 0.000405
+P-Value for comparison counts (KMP vs Trie) with limitWord 15: 0.000000
